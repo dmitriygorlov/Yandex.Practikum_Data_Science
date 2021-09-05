@@ -9,9 +9,7 @@
   </tr>
 
   <tr>
-  <td colspan="3">Модуль 1</td>
-  <td></td>
-  <td></td>
+    <td colspan="3" align = "center"><b>Модуль 1</b></td>
   </tr>
 
   <tr>
@@ -51,9 +49,7 @@
   </tr>
 
   <tr>
-  <td  colspan="3">Модуль 2</td>
-  <td></td>
-  <td></td>
+  <td  colspan="3" align = "center"><b>Модуль 2</b></td>
   </tr>
 
   <tr>
@@ -98,9 +94,7 @@
   </tr>
 
   <tr>
-  <td  colspan="3">Модуль 3</td>
-  <td></td>
-  <td></td>
+  <td  colspan="3" align = "center"><b>Модуль 3</b></td>
   </tr>
 
   <tr>
@@ -152,9 +146,7 @@
   </tr>
 
   <tr>
-  <td  colspan="3">Модуль 4</td>
-  <td></td>
-  <td></td>
+  <td  colspan="3" align = "center"><b>Модуль 4</b></td>
   </tr>
 
   <tr>
