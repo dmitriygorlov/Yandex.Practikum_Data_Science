@@ -9,7 +9,7 @@
   </tr>
 
   <tr>
-  <td>Модуль 1</td>
+  <td colspan="3">Модуль 1</td>
   <td></td>
   <td></td>
   </tr>
@@ -51,7 +51,7 @@
   </tr>
 
   <tr>
-  <td>Модуль 2</td>
+  <td  colspan="3">Модуль 2</td>
   <td></td>
   <td></td>
   </tr>
@@ -98,7 +98,7 @@
   </tr>
 
   <tr>
-  <td>Модуль 3</td>
+  <td  colspan="3">Модуль 3</td>
   <td></td>
   <td></td>
   </tr>
@@ -152,7 +152,7 @@
   </tr>
 
   <tr>
-  <td>Модуль 4</td>
+  <td  colspan="3">Модуль 4</td>
   <td></td>
   <td></td>
   </tr>
