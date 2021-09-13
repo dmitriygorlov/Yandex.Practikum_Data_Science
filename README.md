@@ -133,7 +133,7 @@
 
   <tr>
     <td><a href="https://github.com/dmitriygorlov/Yandex.Practikum_Data_Science/tree/main/Module-03_04-Machine-learning-for-texts">Машинное обучение для текстов</a></td>
-    <td>Из размеченных тексовых данных (комментариев) интернет-магазина нужно обучить модель для классификации позитивных и негативных комментариев.</td>
+    <td>Из размеченных текстовых данных (комментариев) интернет-магазина нужно обучить модель для классификации позитивных и негативных комментариев.</td>
     <td>- pandas
     - numpy
     - pymystem3
@@ -151,7 +151,7 @@
 
   <tr>
     <td><a href="https://github.com/dmitriygorlov/Yandex.Practikum_Data_Science/tree/main/Module-04_01-Data-retrieval_SQL">Извлечение данных</a></td>
-    <td>По данным авиаперелетов, сгрупированных по городам и моделям самолетов, нужно провести анализ на наиболее распространенные.</td>
+    <td>По данным авиаперелетов, сгрупированным по городам и моделям самолетов, нужно провести анализ на наиболее распространенные.</td>
     <td>- SQL
     - numpy
     - pandas
@@ -161,20 +161,20 @@
 
   <tr>
     <td><a href="https://github.com/dmitriygorlov/Yandex.Practikum_Data_Science/tree/main/Module-04_02-Computer-vision">Компьютерное зрение</a></td>
-    <td></td>
-    <td>
+    <td>По набору фотографий людей с указанием возраста нужно обучить модель для определения возраста человека</td>
+    <td>- pandas
+    - matplotlib
+    - tensorflow
+      - keras
     </td>
   </tr>
 
   <tr>
-    <td><a href="">Обучение без учителя</a></td>
-    <td></td>
-    <td>
-    </td>
+  <td  colspan="3" align = "center"><b>Выпускной проект</b></td>
   </tr>
 
   <tr>
-    <td><a href="">Выпускной проект</a></td>
+    <td><a href="">Общий проект</a></td>
     <td></td>
     <td>
     </td>
