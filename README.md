@@ -141,7 +141,8 @@
       - wordnet
       - stopwords
     - sklearn
-    - Модели (LogisticRegression, TfidfVectorizer, LGBMClassifier)
+    - TfidfVectorizer
+    - Модели (LogisticRegression, LGBMClassifier)
     </td>
   </tr>
 
@@ -174,9 +175,15 @@
   </tr>
 
   <tr>
-    <td><a href="">Общий проект</a></td>
-    <td></td>
-    <td>
+    <td><a href="https://github.com/dmitriygorlov/Yandex.Practikum_Data_Science/tree/main/Module-final-Common-project">Общий проект (Телеком)</a></td>
+    <td>По данным телеком компании обучить модель, предсказывающую уход клиента</td>
+    <td>- pandas
+    - numpy
+    - matplotlib
+    - phik
+    - seaborn
+    - sklearn
+    - модели(RandomForestClassifier, LogisticRegression, SGDClassifier, LGBMClassifier, CatBoostClassifier)
     </td>
   </tr>
 
