@@ -1,0 +1,890 @@
+[
+  {
+    "notebook": "Module-01_01-Data-Processing/project-1_borrower-reliability-survey.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "collections",
+      "pandas",
+      "pymystem3"
+    ],
+    "data_references": [
+      {
+        "cell": 3,
+        "source": "data = pd.read_csv('https://code.s3.yandex.net/datasets/data.csv')"
+      },
+      {
+        "cell": 22,
+        "source": "!wget http://download.cdn.yandex.net/mystem/mystem-3.0-linux3.1-64bit.tar.gz"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 8,
+        "source": "data['days_employed'].fillna(average_days_employed, inplace=True)"
+      },
+      {
+        "cell": 8,
+        "source": "data['total_income'].fillna(average_total_income, inplace=True)"
+      },
+      {
+        "cell": 16,
+        "source": "data = data[data['gender'] != 'XNA']"
+      },
+      {
+        "cell": 22,
+        "source": "!wget http://download.cdn.yandex.net/mystem/mystem-3.0-linux3.1-64bit.tar.gz"
+      },
+      {
+        "cell": 22,
+        "source": "!tar -xvf mystem-3.0-linux3.1-64bit.tar.gz"
+      },
+      {
+        "cell": 22,
+        "source": "!cp mystem /root/.local/bin/mystem"
+      },
+      {
+        "cell": 23,
+        "source": "list_unique.append(elements)"
+      },
+      {
+        "cell": 27,
+        "source": "data = data[data['children_type'] != 'ошибка']"
+      },
+      {
+        "cell": 40,
+        "source": "data_pivot_incom = data[(data['income_type'] != 'предприниматель')&(data['income_type'] != 'в декрете')&(data['income_type'] != 'безработный')&(data['income_type'] != 'студент')].pivot_table(index='income_type', columns='total_incom_type', values='debt', aggfunc=['count', 'mean'])"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-01_02-Exploratory-data-analysis/project-2_research-of-apartments-for-sale.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "matplotlib.pyplot",
+      "pandas"
+    ],
+    "data_references": [
+      {
+        "cell": 4,
+        "source": "data = pd.read_csv('https://code.s3.yandex.net/datasets/real_estate_data.csv')"
+      },
+      {
+        "cell": 6,
+        "source": "data = pd.read_csv('https://code.s3.yandex.net/datasets/real_estate_data.csv', sep = '\\t', decimal = '.')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 10,
+        "source": "data['is_apartment'].fillna(False, inplace=True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['ponds_nearest'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['parks_nearest'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['ponds_around3000'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['parks_around3000'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['airports_nearest'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['cityCenters_nearest'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['balcony'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "# Кажется, что отсутствие значения говорит о том, что объявения сняли в тот же день. Заменим нулём, но проверим при расчётах отдельно!"
+      },
+      {
+        "cell": 10,
+        "source": "data['days_exposition'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 10,
+        "source": "data['floors_total'].fillna(0, inplace = True)"
+      },
+      {
+        "cell": 24,
+        "source": "# при среднем 150 дней (5 месяцев в продаж!) 50% сделок закрывается за 2,5 месяца (74 дня), это говорит о больших выбросах (сам максимум 1580 дней ~ 4,5 года)"
+      },
+      {
+        "cell": 26,
+        "source": "data_nonan_days = data[data['days_exposition'] != 0]"
+      },
+      {
+        "cell": 29,
+        "source": "data.query('what_floor != \"ошибка\"').groupby('what_floor')['last_price'].median().plot(kind = 'bar', ylim = 0, grid=True, figsize=(6,6))"
+      },
+      {
+        "cell": 29,
+        "source": "# Стоимость к удаленности от центра. Важно убрать нулевые значения!"
+      },
+      {
+        "cell": 42,
+        "source": "# На графиках видно, что в Санкт-петербурге \"колокол\" более стабильный, выбор квартир больше 50 метров гораздо шире!"
+      },
+      {
+        "cell": 42,
+        "source": "# Высота потолков в Санкт-Петербурге тоже выше, чем в целом почти на полметра!"
+      },
+      {
+        "cell": 42,
+        "source": "# На подробных графиках очень заметно, что основная высота потолков в квартирах Санкт-Петербурга - это 3 метра!"
+      },
+      {
+        "cell": 44,
+        "source": "data_centr.query('what_floor != \"ошибка\"').groupby('what_floor')['last_price'].median().plot(kind = 'bar', ylim = 0, grid=True, figsize=(6,6))"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-01_03-Statistical-analysis-of-data/project-3_cellular-company.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "scipy"
+    ],
+    "data_references": [
+      {
+        "cell": 4,
+        "source": "users = pd.read_csv('https://code.s3.yandex.net/datasets/users.csv')"
+      },
+      {
+        "cell": 4,
+        "source": "calls = pd.read_csv('https://code.s3.yandex.net/datasets/calls.csv')"
+      },
+      {
+        "cell": 4,
+        "source": "internet = pd.read_csv('https://code.s3.yandex.net/datasets/internet.csv')"
+      },
+      {
+        "cell": 4,
+        "source": "messages = pd.read_csv('https://code.s3.yandex.net/datasets/messages.csv')"
+      },
+      {
+        "cell": 4,
+        "source": "tariffs = pd.read_csv('https://code.s3.yandex.net/datasets/tariffs.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 20,
+        "source": "calls = calls[calls['duration'] != 0]"
+      },
+      {
+        "cell": 26,
+        "source": "internet.set_axis(['unnamed', 'id', 'mb_used', 'session_date', 'user_id'], axis = 'columns', inplace=True)"
+      },
+      {
+        "cell": 28,
+        "source": "internet.drop('unnamed', axis=1, inplace=True)"
+      },
+      {
+        "cell": 34,
+        "source": "internet = internet[internet['mb_used'] != 0]"
+      },
+      {
+        "cell": 44,
+        "source": "calls_group.set_axis(['user_id', 'month', 'min_count', 'min_sum'], axis = 'columns', inplace=True)"
+      },
+      {
+        "cell": 46,
+        "source": "messages_group.set_axis(['user_id', 'month', 'mes_count'], axis = 'columns', inplace=True)"
+      },
+      {
+        "cell": 50,
+        "source": "internet_group.set_axis(['user_id', 'month', 'mb_sum'], axis = 'columns', inplace=True)"
+      },
+      {
+        "cell": 54,
+        "source": "users.set_axis(['user_id', 'age', 'churn_date', 'city', 'first_name', 'last_name', 'reg_date', 'tariff_name'], axis=1, inplace=True)"
+      },
+      {
+        "cell": 84,
+        "source": "first_results = st.ttest_ind(data[data['city'] == 'Москва']['rub_totally'], data[data['city'] != 'Москва']['rub_totally'])"
+      },
+      {
+        "cell": 84,
+        "source": "print('Средняя выручка пользователя не из Москвы: {:.2f}'.format(data[data['city'] != 'Москва']['rub_totally'].mean()))"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-01_04-Common-project/project-4_videogames.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "scipy"
+    ],
+    "data_references": [
+      {
+        "cell": 5,
+        "source": "data = pd.read_csv('https://code.s3.yandex.net/datasets/games.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 12,
+        "source": "'jp_sales', 'other_sales', 'critic_score', 'user_score', 'rating'], axis = 1, inplace = True)"
+      },
+      {
+        "cell": 17,
+        "source": "data.dropna(subset = ['name'], inplace = True)"
+      },
+      {
+        "cell": 19,
+        "source": "data.dropna(subset = ['year_of_release'], inplace = True)"
+      },
+      {
+        "cell": 25,
+        "source": "data['user_score'].replace(['tbd'], ['100'], inplace = True )"
+      },
+      {
+        "cell": 27,
+        "source": "data['rating'].replace(['E', 'T', 'M', 'E10+', 'EC', 'K-A', 'RP', 'AO'], ['Для 6+', 'Для 13+', 'Для 17+', 'Для 10+', 'Для 6+', 'Для 6+', 'RP', 'Для 17+'], inplace = True)"
+      },
+      {
+        "cell": 27,
+        "source": "data = data[data['rating'] != 'RP']"
+      },
+      {
+        "cell": 64,
+        "source": "print('Коэффциент корреляции Пирсона между отзывами критиков и продажами на платформе PS4 равен {:.2f}'.format(data_PS4[data_PS4['critic_score'] != 0]['sum_sales'].corr(data_PS4[data_PS4['critic_score'] != 0]['critic_score'])))"
+      },
+      {
+        "cell": 64,
+        "source": "data_PS4[data_PS4['critic_score'] != 0].plot(x='sum_sales', y='critic_score', kind='scatter',"
+      },
+      {
+        "cell": 66,
+        "source": "print('Коэффциент корреляции Пирсона между отзывами пользователей и продажами на платформе PS4 равен {:.2f}'.format(data_PS4[(data_PS4['user_score'] != 0) & (data_PS4['user_score'] != 100)]['sum_sales'].corr(data_PS4[(data_PS4['user_score'] != 0) & (data_PS4['user_score'] != 100)]['user_score'])))"
+      },
+      {
+        "cell": 66,
+        "source": "data_PS4[(data_PS4['user_score'] != 0) & (data_PS4['user_score'] != 100)].plot(x='sum_sales', y='user_score', kind='scatter',"
+      },
+      {
+        "cell": 69,
+        "source": "print('Коэффциент корреляции Пирсона между отзывами критиков и продажами на актуальных платормах (без учета PS4) равен {:.2f}'.format(act_data[(act_data['critic_score'] != 0) & (act_data['platform'] != 'PS4')]['sum_sales'].corr(act_data[(act_data['critic_score'] != 0) & (act_data['platform'] != 'PS4')]['critic_score'])))"
+      },
+      {
+        "cell": 69,
+        "source": "act_data[(act_data['critic_score'] != 0) & (act_data['platform'] != 'PS4')].plot(x='sum_sales', y='critic_score', kind='scatter',"
+      },
+      {
+        "cell": 71,
+        "source": "print('Коэффциент корреляции Пирсона между отзывами пользователей и продажами на актуальных платормах (без учета PS4) равен {:.2f}'.format(act_data[(act_data['user_score'] != 0) & (act_data['user_score'] != 100) & (act_data['platform'] != 'PS4')]['sum_sales'].corr(act_data[(act_data['user_score'] != 0) & (act_data['user_score'] != 100) & (act_data['platform'] != 'PS4')]['user_score'])))"
+      },
+      {
+        "cell": 71,
+        "source": "act_data[(act_data['user_score'] != 0) & (act_data['user_score'] != 100) & (act_data['platform'] != 'PS4')].plot(x='sum_sales', y='user_score', kind='scatter',"
+      },
+      {
+        "cell": 73,
+        "source": "critic_act_data = act_data[act_data['critic_score'] != 0]"
+      },
+      {
+        "cell": 75,
+        "source": "user_act_data = act_data[(act_data['user_score'] != 0) & (act_data['user_score'] != 100)]"
+      },
+      {
+        "cell": 108,
+        "source": "first_results = st.ttest_ind(act_data[(act_data['platform'] == 'XOne') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'], act_data[(act_data['platform'] == 'PC') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'], equal_var = False)"
+      },
+      {
+        "cell": 108,
+        "source": "print('Средний пользовательский рейтинг на XOne: {:.1f}'.format(act_data[(act_data['platform'] == 'XOne') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'].mean()))"
+      },
+      {
+        "cell": 108,
+        "source": "print('Средний пользовательский рейтинг на PC: {:.1f}'.format(act_data[(act_data['platform'] == 'PC') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'].mean()))"
+      },
+      {
+        "cell": 112,
+        "source": "second_results = st.ttest_ind(act_data[(act_data['genre'] == 'Action') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'], act_data[(act_data['genre'] == 'Sports') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'], equal_var = False)"
+      },
+      {
+        "cell": 112,
+        "source": "print('Средний пользовательский рейтинг в жанре Action: {:.1f}'.format(act_data[(act_data['genre'] == 'Action') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'].mean()))"
+      },
+      {
+        "cell": 112,
+        "source": "print('Средний пользовательский рейтинг в жанре Sports: {:.1f}'.format(act_data[(act_data['genre'] == 'Sports') & (act_data['user_score'] != 0) & (act_data['user_score'] != 100)]['user_score'].mean()))"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-02_01-Introduction-to-machine-learning/project-5_users-behavior.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "pandas",
+      "sklearn.dummy",
+      "sklearn.ensemble",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection",
+      "sklearn.tree"
+    ],
+    "data_references": [
+      {
+        "cell": 5,
+        "source": "df = pd.read_csv('https://code.s3.yandex.net/datasets/users_behavior.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 18,
+        "source": "for depth in range(1, 16):"
+      },
+      {
+        "cell": 18,
+        "source": "model = DecisionTreeClassifier(random_state=231, max_depth=depth)"
+      },
+      {
+        "cell": 18,
+        "source": "print('max_depth =', depth, ', accuracy = {:.4f}'.format(accuracy))"
+      },
+      {
+        "cell": 18,
+        "source": "tree_best_max_depth = depth"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-02_02-Supervised-learning/project-6_supervised-lerning.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "pandas",
+      "sklearn.ensemble",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection",
+      "sklearn.preprocessing",
+      "sklearn.utils"
+    ],
+    "data_references": [
+      {
+        "cell": 7,
+        "source": "df=pd.read_csv('https://code.s3.yandex.net/datasets/Churn.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 9,
+        "source": "df.drop(['RowNumber', 'CustomerId', 'Surname'], axis = 1, inplace = True)"
+      },
+      {
+        "cell": 12,
+        "source": "df.dropna(inplace = True)"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-02_03-Machine-learning-in-business/project-7_machine-learning-in-business.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "numpy",
+      "pandas",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection"
+    ],
+    "data_references": [
+      {
+        "cell": 7,
+        "source": "df0 = pd.read_csv('https://code.s3.yandex.net/datasets/geo_data_0.csv')"
+      },
+      {
+        "cell": 7,
+        "source": "df1 = pd.read_csv('https://code.s3.yandex.net/datasets/geo_data_1.csv')"
+      },
+      {
+        "cell": 7,
+        "source": "df2 = pd.read_csv('https://code.s3.yandex.net/datasets/geo_data_2.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 17,
+        "source": "df0.drop(['id'], axis = 1, inplace = True)"
+      },
+      {
+        "cell": 17,
+        "source": "df1.drop(['id'], axis = 1, inplace = True)"
+      },
+      {
+        "cell": 17,
+        "source": "df2.drop(['id'], axis = 1, inplace = True)"
+      },
+      {
+        "cell": 44,
+        "source": "values.append(revenue)"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-02_04-Common-project/project-8_gold-recovery.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "sklearn.dummy",
+      "sklearn.ensemble",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection",
+      "sklearn.pipeline",
+      "sklearn.preprocessing"
+    ],
+    "data_references": [
+      {
+        "cell": 9,
+        "source": "df_train = pd.read_csv('https://code.s3.yandex.net/datasets/gold_recovery_train.csv', parse_dates = ['date'])"
+      },
+      {
+        "cell": 9,
+        "source": "df_test = pd.read_csv('https://code.s3.yandex.net/datasets/gold_recovery_test.csv', parse_dates = ['date'])"
+      },
+      {
+        "cell": 9,
+        "source": "df_full = pd.read_csv('https://code.s3.yandex.net/datasets/gold_recovery_full.csv', parse_dates = ['date'])"
+      }
+    ],
+    "review_candidates": []
+  },
+  {
+    "notebook": "Module-03_01-Linear-algebra/project-9_linear-algebra.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "numpy",
+      "pandas",
+      "sklearn.linear_model",
+      "sklearn.model_selection"
+    ],
+    "data_references": [
+      {
+        "cell": 7,
+        "source": "df = pd.read_csv(\"https://code.s3.yandex.net/datasets/insurance.csv\")"
+      }
+    ],
+    "review_candidates": []
+  },
+  {
+    "notebook": "Module-03_02-Numerical-analysis_gradient-boosting/project-10_numerical-methods.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "catboost",
+      "lightgbm",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection",
+      "sklearn.preprocessing"
+    ],
+    "data_references": [
+      {
+        "cell": 6,
+        "source": "data = pd.read_csv(\"https://code.s3.yandex.net/datasets/autos.csv\")"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 4,
+        "source": "!pip install catboost"
+      },
+      {
+        "cell": 18,
+        "source": "df[\"NotRepaired\"].fillna(\"yes\", inplace=True)"
+      },
+      {
+        "cell": 23,
+        "source": "elif model == \"unknown\" and veh != \"unknown\":"
+      },
+      {
+        "cell": 25,
+        "source": "elif model == \"unknown\" and fuel != \"unknown\":"
+      },
+      {
+        "cell": 27,
+        "source": "elif model == \"unknown\" and gear != \"unknown\":"
+      },
+      {
+        "cell": 57,
+        "source": "'depth' : [10, 5],"
+      },
+      {
+        "cell": 58,
+        "source": "depth = 5,"
+      },
+      {
+        "cell": 63,
+        "source": "'depth' : [15, 10, 5],"
+      },
+      {
+        "cell": 64,
+        "source": "depth = 15,"
+      },
+      {
+        "cell": 69,
+        "source": "LINR = LinearRegression(normalize=True)"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-03_03-Time-series/project-11_time-series.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "catboost",
+      "lightgbm",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection",
+      "statsmodels.tsa.seasonal"
+    ],
+    "data_references": [
+      {
+        "cell": 7,
+        "source": "data = pd.read_csv(\"https://code.s3.yandex.net/datasets/taxi.csv\", index_col=[0], parse_dates=[0])"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 5,
+        "source": "!pip install catboost"
+      },
+      {
+        "cell": 9,
+        "source": "data.sort_index(inplace = True)"
+      },
+      {
+        "cell": 25,
+        "source": "df_variant.dropna(inplace = True)"
+      },
+      {
+        "cell": 27,
+        "source": "best_df.dropna(inplace = True)"
+      },
+      {
+        "cell": 36,
+        "source": "'depth' : [10, 5],"
+      },
+      {
+        "cell": 38,
+        "source": "depth = 10,"
+      },
+      {
+        "cell": 42,
+        "source": "depth = 5,"
+      },
+      {
+        "cell": 47,
+        "source": "'depth' : [15, 10, 5],"
+      },
+      {
+        "cell": 49,
+        "source": "depth = 15,"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-03_04-Machine-learning-for-texts/project-12_text-analysis.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "lightgbm",
+      "nltk",
+      "nltk.corpus",
+      "nltk.stem",
+      "numpy",
+      "pandas",
+      "pymystem3",
+      "re",
+      "sklearn.feature_extraction.text",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection"
+    ],
+    "data_references": [
+      {
+        "cell": 8,
+        "source": "!wget http://download.cdn.yandex.net/mystem/mystem-3.0-linux3.1-64bit.tar.gz"
+      },
+      {
+        "cell": 10,
+        "source": "df = pd.read_csv('https://code.s3.yandex.net/datasets/toxic_comments.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 6,
+        "source": "nltk.download('wordnet')"
+      },
+      {
+        "cell": 6,
+        "source": "nltk.download('punkt')"
+      },
+      {
+        "cell": 6,
+        "source": "nltk.download('averaged_perceptron_tagger')"
+      },
+      {
+        "cell": 6,
+        "source": "nltk.download('stopwords')"
+      },
+      {
+        "cell": 6,
+        "source": "stopwords = set(nltk_stopwords.words('english'))"
+      },
+      {
+        "cell": 8,
+        "source": "!wget http://download.cdn.yandex.net/mystem/mystem-3.0-linux3.1-64bit.tar.gz"
+      },
+      {
+        "cell": 8,
+        "source": "!tar -xvf mystem-3.0-linux3.1-64bit.tar.gz"
+      },
+      {
+        "cell": 8,
+        "source": "!cp mystem /root/.local/bin/mystem"
+      },
+      {
+        "cell": 20,
+        "source": "lemm_list.append(lemmm_uno)"
+      },
+      {
+        "cell": 24,
+        "source": "# nltk.download('averaged_perceptron_tagger')z"
+      },
+      {
+        "cell": 45,
+        "source": "'depth' : [15, 5],"
+      },
+      {
+        "cell": 47,
+        "source": "depth = 15,"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-04_01-Data-retrieval_SQL/project-13_postgre-sql.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas"
+    ],
+    "data_references": [
+      {
+        "cell": 9,
+        "source": "query_1 = pd.read_csv('https://code.s3.yandex.net/datasets/query_1.csv')"
+      },
+      {
+        "cell": 9,
+        "source": "query_3 = pd.read_csv('https://code.s3.yandex.net/datasets/query_3.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 19,
+        "source": "query_1.sort_values('flights_amount', ascending = False, inplace = True)"
+      },
+      {
+        "cell": 24,
+        "source": "nobig_query_3 = query_3[(query_3['city'] != 'Москва') & (query_3['city'] != 'Санкт-Петербург')].sort_values('average_flights', ascending = False)"
+      }
+    ]
+  },
+  {
+    "notebook": "Module-04_02-Computer-vision/project-13_image recognition.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "matplotlib.pyplot",
+      "pandas",
+      "tensorflow.keras.preprocessing.image"
+    ],
+    "data_references": [
+      {
+        "cell": 5,
+        "source": "labels = pd.read_csv('/datasets/faces/labels.csv')"
+      },
+      {
+        "cell": 5,
+        "source": "directory='/datasets/faces/final_files/',"
+      }
+    ],
+    "review_candidates": []
+  },
+  {
+    "notebook": "Module-final-Common-project/project_final_telecom.ipynb",
+    "python_metadata": "3.7.8",
+    "imports": [
+      "catboost",
+      "lightgbm",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "phik",
+      "phik.report",
+      "seaborn",
+      "sklearn.cluster",
+      "sklearn.dummy",
+      "sklearn.ensemble",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection",
+      "sklearn.preprocessing"
+    ],
+    "data_references": [
+      {
+        "cell": 15,
+        "source": "!unzip \"/content/final_provider.zip\" -d \"/content/final_provider/\""
+      },
+      {
+        "cell": 16,
+        "source": "contract = pd.read_csv('/content/final_provider/final_provider/contract.csv')"
+      },
+      {
+        "cell": 16,
+        "source": "personal = pd.read_csv('/content/final_provider/final_provider/personal.csv')"
+      },
+      {
+        "cell": 16,
+        "source": "internet = pd.read_csv('/content/final_provider/final_provider/internet.csv')"
+      },
+      {
+        "cell": 16,
+        "source": "phone = pd.read_csv('/content/final_provider/final_provider/phone.csv')"
+      },
+      {
+        "cell": 17,
+        "source": "# contract = pd.read_csv('/datasets/final_provider/contract.csv')"
+      },
+      {
+        "cell": 17,
+        "source": "# internet = pd.read_csv('/datasets/final_provider/internet.csv')"
+      },
+      {
+        "cell": 17,
+        "source": "# personal = pd.read_csv('/datasets/final_provider/personal.csv')"
+      },
+      {
+        "cell": 17,
+        "source": "# phone = pd.read_csv('/datasets/final_provider/phone.csv')"
+      }
+    ],
+    "review_candidates": [
+      {
+        "cell": 11,
+        "source": "!pip install phik"
+      },
+      {
+        "cell": 11,
+        "source": "!pip install catboost"
+      },
+      {
+        "cell": 14,
+        "source": "! gdown --id 15r2FielktOMWN-KQN8w8owu96_nRtiUN"
+      },
+      {
+        "cell": 15,
+        "source": "!unzip \"/content/final_provider.zip\" -d \"/content/final_provider/\""
+      },
+      {
+        "cell": 34,
+        "source": "contract.dropna(subset = ['TotalCharges'], inplace = True)"
+      },
+      {
+        "cell": 38,
+        "source": "contract_end['duration_M'] = (((contract_end['EndDate'] - contract_end['BeginDate']) / np.timedelta64(1, 'M')).round()).astype(int)"
+      },
+      {
+        "cell": 73,
+        "source": "df['EndDate'].fillna(pd.Timestamp('2020-02-01'), inplace = True)"
+      },
+      {
+        "cell": 73,
+        "source": "# df['duration_M'] = (((df['EndDate'] - df['BeginDate']) / np.timedelta64(1, 'M')).round()).astype(int)"
+      },
+      {
+        "cell": 73,
+        "source": "df.drop(['BeginDate', 'EndDate'], axis = 1, inplace = True)"
+      },
+      {
+        "cell": 77,
+        "source": "df[col].fillna('No', inplace = True)"
+      },
+      {
+        "cell": 81,
+        "source": "df.drop('customerID', axis =1, inplace = True)"
+      },
+      {
+        "cell": 87,
+        "source": "bin_col.append(df[col].name)"
+      },
+      {
+        "cell": 87,
+        "source": "num_col.append(df[col].name)"
+      },
+      {
+        "cell": 95,
+        "source": "distortion.append(Kmodel.inertia_)"
+      },
+      {
+        "cell": 127,
+        "source": "'depth' : [30, 15, 10, 5],"
+      },
+      {
+        "cell": 131,
+        "source": "'depth' : [7]"
+      },
+      {
+        "cell": 138,
+        "source": "result = result.append(test_sum(best_rf, name_rf), ignore_index=True)"
+      },
+      {
+        "cell": 140,
+        "source": "result = result.append(test_sum(best_lr, name_lr), ignore_index=True)"
+      },
+      {
+        "cell": 142,
+        "source": "result = result.append(test_sum(best_sgd, name_sgd), ignore_index=True)"
+      },
+      {
+        "cell": 144,
+        "source": "result = result.append(test_sum(best_lgbm, name_lgbm), ignore_index=True)"
+      },
+      {
+        "cell": 146,
+        "source": "result = result.append(test_sum(best_cat, name_cat), ignore_index=True)"
+      },
+      {
+        "cell": 148,
+        "source": "result = result.append(test_sum(dum, name_dum), ignore_index=True)"
+      }
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "file": "data.csv",
+    "source": "https://code.s3.yandex.net/datasets/data.csv",
+    "bytes": 3323295,
+    "sha256": "14bdaf419e2c225ba0889b1ab6a3ee7fe2f4b036f7cc36e2d02ca3162a726e44"
+  },
+  {
+    "file": "real_estate_data.csv",
+    "source": "https://code.s3.yandex.net/datasets/real_estate_data.csv",
+    "bytes": 3214802,
+    "sha256": "46893d206e70571e9abf8d092e656ab9a1e7395666304b0bcddfd62373c386d6"
+  },
+  {
+    "file": "games.csv",
+    "source": "https://code.s3.yandex.net/datasets/games.csv",
+    "bytes": 1178518,
+    "sha256": "0099b366acb61031879fcbe31ea2ca11bea430df0a4d30bd470611d4159bb26e"
+  },
+  {
+    "file": "insurance.csv",
+    "source": "https://code.s3.yandex.net/datasets/insurance.csv",
+    "bytes": 95668,
+    "sha256": "01474a3d7a8169b239313ca3161ea84f856f6eb7fb58820644b0f53f0aed11a2"
+  },
+  {
+    "file": "query_1.csv",
+    "source": "https://code.s3.yandex.net/datasets/query_1.csv",
+    "bytes": 236,
+    "sha256": "875a87540d32ed5d864e02d0cdbeb1e7bd5e58bb34b6cc363c842b7395d05b1d"
+  },
+  {
+    "file": "query_3.csv",
+    "source": "https://code.s3.yandex.net/datasets/query_3.csv",
+    "bytes": 4295,
+    "sha256": "6e5dede18d48dade50ec1c56ae667f108488ade0f6b634564d6eae4c701a3101"
+  },
+  {
+    "file": "users_behavior.csv",
+    "source": "https://code.s3.yandex.net/datasets/users_behavior.csv",
+    "bytes": 134358,
+    "sha256": "fa089b8abaee72e5fdc514749912dcf6e4959ca6f4c76900b5ea4ae55257354e"
+  },
+  {
+    "file": "users.csv",
+    "source": "https://code.s3.yandex.net/datasets/users.csv",
+    "bytes": 37049,
+    "sha256": "495f62bf8c34b44e0849c5047f2c7567ff6715c18ca86d149d21bb33e26780d5"
+  },
+  {
+    "file": "calls.csv",
+    "source": "https://code.s3.yandex.net/datasets/calls.csv",
+    "bytes": 6031406,
+    "sha256": "9d47893712c53cf6fcb88d5f233b0f7f6fe0f258b162859a76450b9497ab4807"
+  },
+  {
+    "file": "internet.csv",
+    "source": "https://code.s3.yandex.net/datasets/internet.csv",
+    "bytes": 5581787,
+    "sha256": "10bf2f7c5fee14590ace9af552da9834bb6de73a18c99a655e0ca144d4d02eec"
+  },
+  {
+    "file": "messages.csv",
+    "source": "https://code.s3.yandex.net/datasets/messages.csv",
+    "bytes": 3037746,
+    "sha256": "86b7c883b933ed42087127647756a590def296c9c7f31d6095e1fb580bb79666"
+  },
+  {
+    "file": "tariffs.csv",
+    "source": "https://code.s3.yandex.net/datasets/tariffs.csv",
+    "bytes": 193,
+    "sha256": "91e46f828ae7dd11308aba54a5154bcb4eb8794b79b98c413691597f7aa2d93a"
+  }
+]

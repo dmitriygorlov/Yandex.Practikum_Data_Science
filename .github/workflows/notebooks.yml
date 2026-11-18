@@ -1,0 +1,36 @@
+name: Notebook compatibility
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.14.10'
+      - run: python -m pip install -r requirements/core.lock
+      - run: python -m pip check
+      - run: python validate_notebooks.py
+      - run: python -m ruff check .
+      - run: python prepare_nltk.py
+      - run: python -m pytest tests/test_notebooks.py -q
+      - run: python smoke_text.py
+  cv:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      KERAS_HOME: ${{ github.workspace }}/artifacts/keras
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.13.18'
+      - run: python -m pip install -r requirements/cv.lock
+      - run: python -m pip check
+      - run: python -c "import tensorflow; print(tensorflow.__version__)"
+      - run: python -m pytest tests/test_cv.py -q

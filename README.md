@@ -1,3 +1,5 @@
+[Modern environment, execution, validation and migration notes](MODERNIZATION.md)
+
 # Yandex.Practicum_Data_Science Projects and Assignments
 This repository contains practical assignments completed during the learning process at Yandex.Practicum. Each project is located in its own folder and has a more detailed README file. Briefly about all the projects:
 <br>

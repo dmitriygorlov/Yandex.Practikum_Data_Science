@@ -1,0 +1,108 @@
+[
+  {
+    "notebook": "Module-01_01-Data-Processing/project-1_borrower-reliability-survey.ipynb",
+    "code_sha256": "ec4f0f1540ff66bc76e7a9da559861ddd955cdda9e6a678d3b5b03005eae9e2a",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "original public CSVs (validation-data.json)"
+  },
+  {
+    "notebook": "Module-01_02-Exploratory-data-analysis/project-2_research-of-apartments-for-sale.ipynb",
+    "code_sha256": "6eb58ecabbd82f13d5330b176f3a499e5a54bdc12e92b572c7f30353fa43f6e8",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "original public CSVs (validation-data.json)"
+  },
+  {
+    "notebook": "Module-01_03-Statistical-analysis-of-data/project-3_cellular-company.ipynb",
+    "code_sha256": "f94f5113f38ca0c304215b1775a09d8681039e81a1fe52741c8a665f1976ad5f",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "original public CSVs (validation-data.json)"
+  },
+  {
+    "notebook": "Module-01_04-Common-project/project-4_videogames.ipynb",
+    "code_sha256": "f7e7f00c08048ee94a97e130592a38b168e3c23f4afc4c401df68f436b4f80e9",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "original public CSVs (validation-data.json)"
+  },
+  {
+    "notebook": "Module-02_01-Introduction-to-machine-learning/project-5_users-behavior.ipynb",
+    "code_sha256": "78995c17b3b96fa725f88db1191f6de27e40a55afc84fddc17bc8c58d72feff8",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "original public CSVs (validation-data.json)"
+  },
+  {
+    "notebook": "Module-02_02-Supervised-learning/project-6_supervised-lerning.ipynb",
+    "code_sha256": "2bcbac2aafa253291684aee1c9f9c7a03f222704388d52377ef55eea18af509f",
+    "historical_outputs_preserved": true,
+    "execution_data": "not executed end-to-end; see MODERNIZATION.md for targeted tests"
+  },
+  {
+    "notebook": "Module-02_03-Machine-learning-in-business/project-7_machine-learning-in-business.ipynb",
+    "code_sha256": "8382e14071e43f123aa24b8737843c0751c72dcf00652e52ec8111f35c08e85b",
+    "historical_outputs_preserved": true,
+    "execution_data": "not executed end-to-end; see MODERNIZATION.md for targeted tests"
+  },
+  {
+    "notebook": "Module-02_04-Common-project/project-8_gold-recovery.ipynb",
+    "code_sha256": "e552b885b77befc4b3af4d35507c09c0405da91fe7d3eb3df50fa6c8bd2a084f",
+    "historical_outputs_preserved": true,
+    "execution_data": "not executed end-to-end; see MODERNIZATION.md for targeted tests"
+  },
+  {
+    "notebook": "Module-03_01-Linear-algebra/project-9_linear-algebra.ipynb",
+    "code_sha256": "c2d517351e5f5696a678d50fa91d0449e902777ba7ddc9391ef41db1ab85f715",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "original public CSVs (validation-data.json)"
+  },
+  {
+    "notebook": "Module-03_02-Numerical-analysis_gradient-boosting/project-10_numerical-methods.ipynb",
+    "code_sha256": "4923eb4e5bdc2eb00d7da85fbd2a64079eb187eb54d6918d641136c7a3555c19",
+    "historical_outputs_preserved": true,
+    "execution_data": "not executed end-to-end; see MODERNIZATION.md for targeted tests"
+  },
+  {
+    "notebook": "Module-03_03-Time-series/project-11_time-series.ipynb",
+    "code_sha256": "18801975ee6626469709d8e0ba44e75fbbf6c0eb17db32cdaf585bbd8bb94cce",
+    "historical_outputs_preserved": true,
+    "execution_data": "not executed end-to-end; see MODERNIZATION.md for targeted tests"
+  },
+  {
+    "notebook": "Module-03_04-Machine-learning-for-texts/project-12_text-analysis.ipynb",
+    "code_sha256": "8bd8cf9f6441fa9a7ecb50f32902553a1e81f0a0c359d2bc232edfae539e8ada",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "synthetic"
+  },
+  {
+    "notebook": "Module-04_01-Data-retrieval_SQL/project-13_postgre-sql.ipynb",
+    "code_sha256": "e55bb10da92133b335928edc052b9f5fb116cddd9ab99b64f2a281ff8dbc7d55",
+    "historical_outputs_preserved": true,
+    "executed_code_matches": true,
+    "execution_errors": 0,
+    "execution_data": "original public CSVs (validation-data.json)"
+  },
+  {
+    "notebook": "Module-04_02-Computer-vision/project-13_image recognition.ipynb",
+    "code_sha256": "ab42f3d6728ab33273fa1d5c802f95249899bc17b29986c26de9ffff013a8d27",
+    "historical_outputs_preserved": true,
+    "execution_data": "not executed end-to-end; see MODERNIZATION.md for targeted tests"
+  },
+  {
+    "notebook": "Module-final-Common-project/project_final_telecom.ipynb",
+    "code_sha256": "46a43667a880993e53acbd648239ac16cc5426dd3bd89edbc51e1d167790f13b",
+    "historical_outputs_preserved": true,
+    "execution_data": "not executed end-to-end; see MODERNIZATION.md for targeted tests"
+  }
+]
