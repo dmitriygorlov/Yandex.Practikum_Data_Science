@@ -25,10 +25,18 @@ def test_local_dataset_no_implicit_network(tmp_path, monkeypatch):
     assert notebook_support.read_dataset('https://example.invalid/data.csv').a.tolist() == [1]
 
 
-@pytest.mark.parametrize('text,lemma', [('покупка жилья', 'жильё'), ('на образование', 'образование'),
+@pytest.mark.parametrize('text,lemma', [('покупка жилья', 'жилье'), ('на образование', 'образование'),
                                       ('свадьбы', 'свадьба'), ('автомобиля', 'автомобиль'), ('недвижимости', 'недвижимость')])
 def test_russian_purpose_categories(text, lemma):
-    assert lemma in notebook_support.RussianLemmatizer().lemmatize(text)
+    morphology = notebook_support.RussianLemmatizer()
+    assert lemma in morphology.lemmatize(text)
+    # Exercise the actual category keys and function, not only dictionary tokens.
+    tree = ast.parse(source('*borrower*.ipynb', 23))
+    nodes = [node for node in tree.body if isinstance(node, ast.FunctionDef)
+             or isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'list_uni' for t in node.targets)]
+    namespace = {'m': morphology}
+    exec(compile(ast.Module(body=nodes, type_ignores=[]), '<purpose-category>', 'exec'), namespace)
+    assert namespace['pyrpose_gr']({'purpose': text}) == lemma
 
 
 def test_series_fill_updates_parent_under_copy_on_write():

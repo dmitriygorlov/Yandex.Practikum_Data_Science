@@ -28,7 +28,8 @@ class RussianLemmatizer:
 
     @lru_cache(maxsize=16384)
     def _lemma(self, token):
-        return self.analyzer.parse(token)[0].normal_form
+        # Historical notebook categories use е, whereas pymorphy3 restores ё.
+        return self.analyzer.parse(token)[0].normal_form.replace('ё', 'е')
 
     def lemmatize(self, text):
         return [self._lemma(token) for token in re.findall(r'[а-яё]+', str(text).lower())]
